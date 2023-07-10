@@ -1,0 +1,69 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Memoranda</title>
+    
+  </head>
+  <body id="bdy">
+<!-- navbar start -->
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #172E1A;color: #97B37A;border-bottom-left-radius: 35px;height:fit-content">
+    
+    <a style="color: #D2D2D2;font-family:'Times New Roman', Times, serif" class="navbar-brand" href="/"><h4>📝നemoranda</h4></a>
+    <button class="navbar-toggler bg-success" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+
+        {% if request.user.is_authenticated %}
+           <li class="nav-item">
+               <a style="color: #D2D2D2;" class="nav-link" href="/logout">Logout⇨</a>
+           </li>
+        {% else %}
+           <li class="nav-item">
+               <a style="color: #D2D2D2;" class="nav-link" href="/login">Login</a>
+           </li>
+           <li class="nav-item">
+               <a style="color: #D2D2D2;"class="nav-link" href="/signup">SignUp</a>
+           </li>
+        {% endif %}
+        
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar ends -->
+ 
+  <!-- changing content starts-->
+       <div>
+           {% block content %}
+           
+           {% endblock %}
+       </div>
+  <!-- changing content ends -->
+     <div class="footer">
+         <p id='footer1'>©2021 Gourav Yadav</p>
+         <p id='footer1'> ✉︎<a style="color: #D2D2D2;" href="mailto:gyadav88897@gmail.com">gyadav88897@gmail.com</a></p>
+         
+     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- for preloader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+        }, 1000);
+    </script>
+    
+  </body>
+</html>
